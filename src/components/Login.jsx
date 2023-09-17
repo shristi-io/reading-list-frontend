@@ -26,7 +26,7 @@ const Login = () => {
         <input
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="border-2 outline-none rounded-md px-4 py-2 border-gray-400 w-[500px]"
+          className="border-2 outline-none rounded-md px-4 py-2 border-gray-400 lg:w-[500px] w-[300px]"
           type="email"
           name=""
           id=""
@@ -35,7 +35,7 @@ const Login = () => {
         <input
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="border-2 outline-none rounded-md px-4 py-2 border-gray-400 w-[500px]"
+          className="border-2 outline-none rounded-md px-4 py-2 border-gray-400 lg:w-[500px] w-[300px]"
           type="password"
           name=""
           id=""
