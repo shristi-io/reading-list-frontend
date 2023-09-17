@@ -30,7 +30,7 @@ const BookShow = ({ book }) => {
       {showEdit ? (
         <BookEdit book={book} onSubmit={handleEdit} />
       ) : (
-        <div className="w-full px-2 flex justify-between items-center">
+        <div className="w-full px-2 flex max-sm:flex-col justify-between items-center">
           <h2 className="cursor-pointer inline text-xl font-serif">
             {book.title}
           </h2>

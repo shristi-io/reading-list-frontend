@@ -10,7 +10,7 @@ const BookList = () => {
   }, []);
 
   return (
-    <section className="max-sm:mb-[500px]">
+    <section className="max-md:pb-[500px]">
       <div className="my-4">
         <h1
           className="text-center text-xl

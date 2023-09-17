@@ -12,7 +12,7 @@ function App() {
   return (
     <>
       <header
-        className="py-12 h-[20vh] bg-red-500
+        className="py-12 min-h-[20vh] bg-red-500
       "
       >
         <div className="flex justify-center items-center">
