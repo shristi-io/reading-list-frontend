@@ -15,10 +15,13 @@ function Provider({ children }) {
   };
 
   const login = async ({ email, password }) => {
-    const { data } = await axios.post("http://localhost:5001/api/users/login", {
-      email,
-      password,
-    });
+    const { data } = await axios.post(
+      "https://reading-list-backend.onrender.com/api/users/login",
+      {
+        email,
+        password,
+      }
+    );
     const token = data.accessToken;
     if (!token) throw new Error("Couldn't login user");
     setToken(token);
@@ -28,7 +31,7 @@ function Provider({ children }) {
 
   const signup = async ({ email, username, password }) => {
     const { data } = await axios.post(
-      "http://localhost:5001/api/users/register",
+      "https://reading-list-backend.onrender.com/api/users/register",
       {
         email,
         password,
@@ -46,11 +49,14 @@ function Provider({ children }) {
   };
 
   const getBook = async () => {
-    const { data } = await axios.get("http://localhost:5001/api/books", {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
+    const { data } = await axios.get(
+      "https://reading-list-backend.onrender.com/api/books",
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
 
     setBooks(data);
   };
@@ -59,7 +65,7 @@ function Provider({ children }) {
     // const id = Math.round(Math.random() * 9999);
     // setBooks([...books, { id, title }]);
     const { data } = await axios.post(
-      "http://localhost:5001/api/books",
+      "https://reading-list-backend.onrender.com/api/books",
       {
         title,
       },
@@ -73,17 +79,20 @@ function Provider({ children }) {
   };
 
   const deleteById = async (id) => {
-    await axios.delete(`http://localhost:5001/api/books/${id}`, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
+    await axios.delete(
+      `https://reading-list-backend.onrender.com/api/books/${id}`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
     setBooks(books.filter((book) => book._id !== id));
   };
 
   const updateBook = async (id, title) => {
     const { data } = await axios.put(
-      `http://localhost:5001/api/books/${id}`,
+      `https://reading-list-backend.onrender.com/api/books/${id}`,
       {
         title,
       },
